@@ -1,0 +1,10 @@
+com/example/diary/MainActivity.java
+ com.example.diary.MainActivity
+com/example/diary/AddPostActivity.java
+ com.example.diary.AddPostActivity
+com/example/diary/WelcomeActivity.java
+ com.example.diary.WelcomeActivity
+com/example/diary/BuildConfig.java
+ com.example.diary.BuildConfig
+com/example/diary/SetupActivity.java
+ com.example.diary.SetupActivity
