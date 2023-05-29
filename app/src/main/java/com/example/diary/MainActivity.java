@@ -71,13 +71,12 @@ public class MainActivity extends AppCompatActivity {
                         buffer = buffer.append((char)ctr);
                     }
 
-                    String lines[] = buffer.toString().split("/\n");
+                    String[] lines = buffer.toString().split("/\n");
 
                     for (String line : lines) {
                         String[] info = line.split(",");
 
                         //Card View
-                        CardView.LayoutParams layoutParams = new CardView.LayoutParams(CardView.LayoutParams.WRAP_CONTENT, CardView.LayoutParams.WRAP_CONTENT);
                         cv = new CardView(this);
 
                         //Linear Layout
@@ -97,8 +96,8 @@ public class MainActivity extends AppCompatActivity {
                         TextView tv_title = new TextView(this);
                         TextView tv_date = new TextView(this);
                         TextView tv_body = new TextView(this);
-                        tv_title.setTextAppearance(this, R.style.TextAppearance_AppCompat_Title);
-                        tv_date.setTextAppearance(this, R.style.TextAppearance_AppCompat_Caption);
+                        tv_title.setTextAppearance(this, androidx.appcompat.R.style.TextAppearance_AppCompat_Title);
+                        tv_date.setTextAppearance(this, androidx.appcompat.R.style.TextAppearance_AppCompat_Caption);
                         tv_title.setText(info[0]);
                         tv_body.setText(info[1]);
                         tv_date.setText("Date Posted: " + currentDateandTime + "\n");
@@ -136,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
                     SharedPreferences.Editor editor = sp.edit();
 
                     editor.putInt(SetupActivity.PREF_posts, 0);
-                    editor.commit();
+                    editor.apply();
 
                     layout_container.removeAllViews();
                     no_posts_container.setVisibility(View.VISIBLE);
@@ -156,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
                     editor.putString(SetupActivity.PREF_name, "");
                     editor.putString(SetupActivity.PREF_pass, "");
                     editor.putInt(SetupActivity.PREF_posts, 0);
-                    editor.commit();
+                    editor.apply();
 
                     Intent refresh = new Intent(this, SetupActivity.class);
                     startActivity(refresh);
